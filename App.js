@@ -13,6 +13,8 @@ function App(){
         <Text>Sub, texto aqui!</Text>
       </View>
 
+      <View style={{backgroundColor:'#DDD', flex: 1}}></View>
+
       <View style={{backgroundColor:'#121212', height:65}}></View>
     </View>
   );
