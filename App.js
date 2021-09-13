@@ -4,18 +4,20 @@ import { View, Text} from 'react-native';
 function App(){
 
   return(
-    //flex vai ocupar toda a tela!
-    <View style={{flex: 1, backgroundColor:'#121212'}}> 
-      <View style={{backgroundColor:'#121212', height:65}}></View>
+    //justifyContent trabalha com a linha, já o alignItems trabalha com a coluna.
+    <View style={{  
+      flex: 1, 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'space-around', 
+      }}> 
 
-      <View style={{backgroundColor:'#DDD', flex: 1}}>
-        <Text>Wessh</Text>
-        <Text>Sub, texto aqui!</Text>
-      </View>
+      <View style={{backgroundColor:'#121212', height:50, width:50}}></View>
 
-      <View style={{backgroundColor:'#DDD', flex: 1}}></View>
+      <View style={{backgroundColor:'red', height:50, width:50}}></View>
 
-      <View style={{backgroundColor:'#121212', height:65}}></View>
+      <View style={{backgroundColor:'green', height:50, width:50}}></View>
+      
     </View>
   );
 }
