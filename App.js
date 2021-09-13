@@ -1,24 +1,48 @@
-import React from 'react';
-import { View, Text} from 'react-native';
+import React, {useState} from 'react';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 
 function App(){
+  const [name, setName] = useState('');
+
+  function getName(text) {
+    
+    if(text.length > 0){
+      setName(text + '...');
+    }else{
+      setName('');
+    }
+  }
 
   return(
-    //justifyContent trabalha com a linha, já o alignItems trabalha com a coluna.
-    <View style={{  
-      flex: 1, 
-      flexDirection: 'column', 
-      alignItems: 'center', 
-      justifyContent: 'space-around', 
-      }}> 
+    <View style={styles.container}> 
 
-      <View style={{backgroundColor:'#121212', height:50, width:50}}></View>
+    <TextInput
+      style={styles.textInput}
+      placeholder="Digite seu nome"
+      onChangeText={(text) => getName(text)} // onChangeText, cada alteração de texto no input, ele chama uma função
+    />
 
-      <View style={{backgroundColor:'red', height:50, width:50}}></View>
+    <Text style={styles.textText}>{name}</Text>
 
-      <View style={{backgroundColor:'green', height:50, width:50}}></View>
-      
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  textInput: {
+    height:45,
+    borderWidth: 1,
+    margin: 10,
+    padding: 10,
+    fontSize: 20,
+  },
+  textText: {
+    textAlign: 'center',
+    fontSize: 25,
+  }
+});
+
 export default App;
